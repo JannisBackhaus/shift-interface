@@ -1,0 +1,22 @@
+{
+  "name": "scroll",
+  "version": "1.0.0",
+  "description": "\"scroll\" is an early interaction prototype for an interface designed by Jannis Backhaus. the topic was \"in between\" ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jannis Backhaus",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "browser-sync": "^2.26.7",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cache": "^1.1.3",
+    "gulp-connect": "^5.7.0",
+    "gulp-sass": "^4.1.0"
+  }
+}
