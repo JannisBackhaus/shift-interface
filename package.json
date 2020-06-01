@@ -1,8 +1,8 @@
 {
-  "name": "scroll",
+  "name": "shift",
   "version": "1.0.0",
-  "description": "\"scroll\" is an early interaction prototype for an interface designed by Jannis Backhaus. the topic was \"in between\" ",
-  "main": "index.js",
+  "description": "\"shift\" is an early interaction prototype for an interface designed by Jannis Backhaus. the topic was \"in between\" ",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
