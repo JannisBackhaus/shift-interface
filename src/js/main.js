@@ -1,25 +1,18 @@
 var s = Snap('#svg');
 
 
-var moveFunc = function (dx, dy, posx, posy) {
-    this.attr({ x: 0 });
-};
 
 
 
-var move = function (dx, dy) {
-    this.attr({
-        transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [0, dy]
-    });
-}
+var bar1 = new Bar(700, 200, 0);
+bar1.all.drag(bar1.move1, bar1.start, bar1.stop);
 
-var start = function () {
-    this.data('origTransform', this.transform().local);
-}
-var stop = function () {
-    console.log('finished dragging');
-}
+var bar2 = new Bar(700, 200, 45);
+bar2.all.drag(bar2.move2, bar2.start, bar2.stop);
 
+var bar3 = new Bar(700, 200, 90);
+bar3.all.drag(bar3.move3, bar3.start, bar3.stop);
 
-createBar();
-myRect.drag(move, start, stop);
+var bar4 = new Bar(700, 200, 135);
+bar4.all.drag(bar4.move4, bar4.start, bar4.stop);
+
