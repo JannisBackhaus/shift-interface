@@ -1,0 +1,104 @@
+{
+  "_from": "xebra.js",
+  "_id": "xebra.js@1.2.5",
+  "_inBundle": false,
+  "_integrity": "sha512-ZKZgbxPW3YxUv7a/2ZZ4iyvc5JS5nP6AcPU1sxORVqYwKhqBi+oNFsGCxKhqxaRnVQOzQKPUOfBtuvIU12YLig==",
+  "_location": "/xebra.js",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "xebra.js",
+    "name": "xebra.js",
+    "escapedName": "xebra.js",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/xebra.js/-/xebra.js-1.2.5.tgz",
+  "_shasum": "5488289a026a9be9534116396a064c2baabf9b03",
+  "_spec": "xebra.js",
+  "_where": "F:\\HFU\\Hauptstudium\\Semester 5\\Interface Design\\Interface Project\\prototyping\\shift svg",
+  "author": {
+    "name": "Cycling '74",
+    "url": "http://cycling74.com"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/Cycling74/miraweb/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Florian Demmer",
+      "email": "florian@cycling74.com"
+    },
+    {
+      "name": "Sam Tarakajian",
+      "email": "sam@cycling74.com"
+    },
+    {
+      "name": "Jeremy Bernstein",
+      "email": "jeremy@cycling74.com"
+    },
+    {
+      "name": "Ben Bracken",
+      "email": "ben@cycling74.com"
+    },
+    {
+      "name": "Cassie Tarakajian",
+      "email": "cassie@cycling74.com"
+    }
+  ],
+  "dependencies": {
+    "babel-runtime": "^6.18.0",
+    "browserify": "^13.1.0",
+    "lodash.pick": "^4.4.0",
+    "lodash.uniq": "^4.5.0",
+    "sprintf-js": "^1.0.3",
+    "xebra-communicator": "1.2.5"
+  },
+  "deprecated": false,
+  "description": "Xebra connects Max to the browser, and the browser to Max.",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.18.0",
+    "babelify": "^7.3.0",
+    "gh-pages": "^0.12.0",
+    "jaguarjs-jsdoc": "git://github.com/fde31/jaguarjs-jsdoc.git#xebra_docs",
+    "jsdoc": "^3.4.2",
+    "jsdoc-babel": "^0.2.1",
+    "uglify-js": "^2.7.3"
+  },
+  "homepage": "http://cycling74.com",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "xebra.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cycling74/miraweb.git"
+  },
+  "scripts": {
+    "build": "babel ./src -d ./lib; node ./scripts/build.js",
+    "clean": "rimraf ./node_modules",
+    "docs": "sh ./scripts/docs",
+    "postpublish": "yarn run docs && node ./scripts/publish_docs.js",
+    "prebuild": "rimraf ./lib; rimraf ./dist",
+    "predocs": "rimraf ./docs",
+    "prepublish": "yarn run build",
+    "test": "echo 'No Xebra.js' tests"
+  },
+  "version": "1.2.5"
+}

@@ -5,18 +5,21 @@ class Bar {
     shadowBlur = 10;
     shadowColor = "#b3b3b3"
 
-    rectSize = 80;
+    rectSize = 50;
     dotRadius = this.rectSize / 12
-    spacing = 50;
+    spacing = 30;
     all
     rectGroup
     dotGroup
-
+    cx
+    cy
 
     constructor(_x, _y, _rot) {
         this.dotGroup = s.g();
         this.rectGroup = s.g();
         this.all = s.g();
+        this.cx = _x
+        this.cy = _y
         _x = _x - this.rectSize / 2;
         _y = _y - this.rectSize * 3.5 - this.spacing * 3;
         this.draw(_x, _y, _rot);
@@ -75,12 +78,60 @@ class Bar {
         })
     }
 
-    move1 = function (dx, dy) {
-        dx = 0
 
-        this.attr({
-            transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
-        });
+    move1 = function (dx, dy) {
+
+        dx = 0;
+
+
+        let snapArray = [150, 75, 0, -75, -150];
+
+        let highEnd = snapArray[0];
+        let lowEnd = snapArray[4];
+
+
+
+        let position = this.transform().local;
+        let posArray = position.split(',')
+
+
+        posArray[0] = posArray[0].slice(1)
+        posArray[0] = parseInt(posArray[0], 10)
+        posArray[1] = parseInt(posArray[1], 10)
+
+        console.log(this)
+
+
+        if (posArray[1] > highEnd + 1) {
+            if (dy < 0) {
+                this.attr({
+                    transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
+                });
+
+
+                if (posArray[1] > highEnd + 1) {
+                    this.attr({
+                        transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
+                    });
+                }
+            }
+
+        }
+
+        else if (posArray[1] < lowEnd - 1) {
+            if (dy > 0) {
+                this.attr({
+                    transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
+                });
+            }
+
+
+        }
+        else {
+            this.attr({
+                transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
+            });
+        }
     }
 
     move2 = function (dx, dy) {
@@ -107,7 +158,6 @@ class Bar {
             dy = dx
         else
             dx = dy
-
         this.attr({
             transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
         });
@@ -115,10 +165,26 @@ class Bar {
 
     start = function () {
         this.data('origTransform', this.transform().local);
+        //if(this.transform().local == )
 
     }
-    stop = function () {
+    stop = function (x, y) {
         console.log('finished dragging');
+        let snapArray = [150, 75, 0, -75, -150];
+        let snapRange = 15;
+
+        let highEnd = snapArray[0];
+        let lowEnd = snapArray[4];
+
+        let position = this.transform().local;
+        let posArray = position.split(',')
+
+
+        posArray[0] = posArray[0].slice(1)
+        posArray[0] = parseInt(posArray[0], 10)
+        posArray[1] = parseInt(posArray[1], 10)
 
     }
+
+
 }
