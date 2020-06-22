@@ -7,7 +7,7 @@ class Bar {
 
     rectSize = 80;
     dotRadius = this.rectSize / 12
-    spacing = 60;
+    spacing = 50;
     all
     rectGroup
     dotGroup
@@ -17,6 +17,8 @@ class Bar {
         this.dotGroup = s.g();
         this.rectGroup = s.g();
         this.all = s.g();
+        _x = _x - this.rectSize / 2;
+        _y = _y - this.rectSize * 3.5 - this.spacing * 3;
         this.draw(_x, _y, _rot);
     }
 
