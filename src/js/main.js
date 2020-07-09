@@ -84,22 +84,22 @@ function addHTMLSlider() {
             newBar.all.drag(newBar.move1, newBar.start, newBar.stop1);
             barCounter++;
             break;
-           case 1:
-               var newBar = new Bar(centerX, centerY, 45);
-               newBar.all.drag(newBar.move2, newBar.start, newBar.stop2);
-               barCounter++;
-               break;
-           case 2:
-               var newBar = new Bar(centerX, centerY, 90);
-               newBar.all.drag(newBar.move3, newBar.start, newBar.stop3);
-               barCounter++;
-               break;
-           case 3:
-               var newBar = new Bar(centerX, centerY, 135);
-               newBar.all.drag(newBar.move4, newBar.start, newBar.stop4);
-               barCounter++;
-               drawCircle();
-               break;
+        case 1:
+            var newBar = new Bar(centerX, centerY, 45);
+            newBar.all.drag(newBar.move2, newBar.start, newBar.stop2);
+            barCounter++;
+            break;
+        case 2:
+            var newBar = new Bar(centerX, centerY, 90);
+            newBar.all.drag(newBar.move3, newBar.start, newBar.stop3);
+            barCounter++;
+            break;
+        case 3:
+            var newBar = new Bar(centerX, centerY, 135);
+            newBar.all.drag(newBar.move4, newBar.start, newBar.stop4);
+            barCounter++;
+            drawCircle();
+            break;
         case 4:
             console.log("There are four sliders already.")
             break;
@@ -145,6 +145,7 @@ function animateSnap(_bar, _differ) {
     let stepSize
     let remainder = _differ % steps;
 
+    
 
     if (value < 0)
         stepSize = Math.ceil(value);
@@ -160,12 +161,12 @@ function animateSnap(_bar, _differ) {
         if (i == steps) {
             window.setTimeout(function () {
                 moveStep(_bar, remainder, true)
-            }, i * 5);
+            }, i * 15);
         }
         else {
             window.setTimeout(function () {
                 moveStep(_bar, stepSize, false)
-            }, i * 5);
+            }, i * 15);
         }
     }
 }
