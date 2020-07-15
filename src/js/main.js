@@ -3,7 +3,7 @@ var s = Snap('#svg');
 
 
 
-var xebraState;
+/*var xebraState;
 var options = {
     hostname: "127.0.0.1",
     port: 8086,
@@ -22,6 +22,7 @@ xebraState.on("object_removed", function (object) {
 
 xebraState.connect();
 
+*/
 
 function touchHandler(event) {
     var touches = event.changedTouches,
@@ -114,11 +115,11 @@ function drawCircle() {
         fill: "white"
     })
 
-    var centerCircle2 = s.circle(centerX, centerY, 3)
+   /* var centerCircle2 = s.circle(centerX, centerY, 3)
     centerCircle2.attr({
         fill: "red"
     })
-
+*/
 }
 
 function addHTMLButton(object) {
